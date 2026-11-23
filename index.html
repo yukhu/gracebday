@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbe9e2">
+  <meta name="description" content="A little birthday card made just for you. Tap to open.">
+  <title>Happy Birthday — A Card For You</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/card.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <main class="stage">
+    <div class="spread" id="spread">
+      <!-- Inside of the card (the page that gets revealed) -->
+      <div class="card-body">
+        <article class="inside" id="inside" tabindex="-1" inert>
+          <span class="corner-spark corner-spark--tl" aria-hidden="true">✦</span>
+          <span class="corner-spark corner-spark--br" aria-hidden="true">✦</span>
+        </article>
+      </div>
+
+      <!-- The cover: the card you see first -->
+      <button class="cover" id="cover" type="button" aria-expanded="false" aria-controls="inside" aria-label="Open the birthday card">
+        <span class="cover-face cover-front">
+          <span class="cover-glow" aria-hidden="true"></span>
+          <span class="front-content">
+            <span class="kicker">a little note for you</span>
+            <span class="seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 20.7s-7.6-4.6-7.6-10A4.4 4.4 0 0 1 12 7.7a4.4 4.4 0 0 1 7.6 3c0 5.4-7.6 10-7.6 10Z" fill="currentColor"/></svg>
+            </span>
+            <span class="cover-title">For You</span>
+            <span class="rule" aria-hidden="true"><span></span><b>✦</b><span></span></span>
+            <span class="open-hint"><span class="hint-dot" aria-hidden="true"></span>tap to open</span>
+          </span>
+        </span>
+
+        <span class="cover-face cover-back" aria-hidden="true">
+          <span class="back-content">
+            <span class="mini-spark">✦</span>
+            <span class="eyebrow eyebrow--rose">机器恩</span>
+            <span class="back-title">今年10岁啦<br>妈妈祝你生日快乐</span>
+            <span class="back-note">虽然你好烦,<br>但是妈妈还是那么爱你哟<br>Mom<br>2026.11.24</span>
+            <span class="ornament ornament--small">
+              <span></span>
+              <svg viewBox="0 0 24 24"><path d="M12 20.7s-7.6-4.6-7.6-10A4.4 4.4 0 0 1 12 7.7a4.4 4.4 0 0 1 7.6 3c0 5.4-7.6 10-7.6 10Z" fill="currentColor"/></svg>
+              <span></span>
+            </span>
+          </span>
+        </span>
+      </button>
+    </div>
+
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+  </main>
+
+  <audio id="cardAudio" loop preload="none" aria-hidden="true">
+    <source src="assets/happy%20birthday.wav" type="audio/wav">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
